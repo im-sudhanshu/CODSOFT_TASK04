@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <div class="player">
+      <div class="cover-wrap">
+        <img id="cover" src="" alt="Album cover">
+      </div>
+      <h2 id="title">—</h2>
+      <p id="artist">—</p>
+
+      <input type="range" id="seek" value="0" step="0.1" min="0" max="100">
+      <div class="time">
+        <span id="currentTime">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+
+      <div class="controls">
+        <button id="shuffleBtn" title="Shuffle">🔀</button>
+        <button id="prevBtn" title="Previous">⏮</button>
+        <button id="playBtn" title="Play/Pause">▶</button>
+        <button id="nextBtn" title="Next">⏭</button>
+        <button id="repeatBtn" title="Repeat">🔁</button>
+      </div>
+
+      <div class="volume">
+        <button id="muteBtn">🔊</button>
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+      </div>
+    </div>
+
+    <div class="upload">
+        <label for="fileInput" class="upload-btn">+ Add Music</label>
+        <input type="file" id="fileInput" accept="audio/*" multiple hidden>
+    </div>
+
+    <div class="playlist">
+      <div class="playlist-header">
+        <h3>Playlist</h3>
+        <span id="count"></span>
+      </div>
+      <ul id="playlistItems"></ul>
+    </div>
+
+    <audio id="audio"></audio>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
